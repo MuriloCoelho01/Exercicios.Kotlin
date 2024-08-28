@@ -49,14 +49,15 @@ fun main() {
                 var remocao3: String = readln()
                 list.remove(remocao3)
 
+                println("")
+                println("SUA LISTA ATUAL:")
                 for (m in list) {
-                    println("")
-                    println("SUA LISTA ATUAL: $m")
+                    println(m)
                 }
                 if (list.isEmpty()) {
                     println("")
-                   println("Sua lista está finalizada! ")
-                break
+                    println("Sua lista está finalizada! ")
+                    break
                 }
 
                 if(confirmacao2 == "não" || confirmacao2 == "Não") {
@@ -67,9 +68,12 @@ fun main() {
             }
         }
 
-        }
-
     }
+
+}
+
+
+
 
 
 
