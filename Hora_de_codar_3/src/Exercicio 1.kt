@@ -11,4 +11,7 @@ fun main() {
         println("Digite outro valor:")
         num2 = readln().toInt()
     }
+var conta:Double = (num1 / num2)
+
+    println("O resultado da divisão é igual a $conta ")
 }
