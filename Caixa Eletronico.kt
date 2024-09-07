@@ -32,7 +32,7 @@ fun inicio() {
 
     when (escolha) {
         1 -> verSaldo()
-        2 -> extrato()
+        2 -> extrato1()
         3 -> fazerSaque()
         4 -> fazerDeposito()
         5 -> fazerTransferencia()
@@ -45,14 +45,45 @@ fun inicio() {
 fun verSaldo() {
 
     println("")
-    println("$nome seu saldo atual é: R$$saldo reais")
-    inicio()
+    println("Digite a senha de 4 digitos:")
+    var senha: Int = readln().toInt()
+
+    while (senha != 3589) {
+        println("Senha incorreta, digite novamente")
+        senha = readln().toInt()
+    }
+    if (senha == 3589) {
+        println("")
+        println("$nome seu saldo atual é: R$$saldo reais")
+
+    } else if (senha == null) {
+        println("Por favor, informe uma senha válida.")
+        senha = readln().toInt()
+        verSaldo()
+    }
 }
 
 
 
+fun extrato1(){
+    println("")
+    println("Digite a senha de 4 digitos:")
+    var senha:Int = readln().toInt()
 
-fun extrato(){
+    while(senha != 3589){
+        println("Senha incorreta, digite novamente")
+        senha = readln().toInt()
+    }
+    if (senha == 3589 ){
+  extrato2()
+    }
+    else if (senha == null){
+        println("Por favor, informe uma senha válida.")
+        senha = readln().toInt()
+      extrato1()
+    }
+}
+fun extrato2(){
     println("$nome, seu Extrato Bancário:")
     println("=================")
     println("Data       | Descrição                  | Valor")
@@ -67,13 +98,15 @@ fun extrato(){
     println("Saldo Atual:                       | $saldo")
     println("========================================================")
     inicio()
+
+
 }
 
 
 
 fun fazerDeposito() {
     println("Qual o valor para depósito? ")
-    var deposito = readln().toDoubleOrNull()
+    var deposito = readln().toInt()
     println("")
     println("")
 
@@ -81,7 +114,7 @@ fun fazerDeposito() {
         println("Por favor, informe um número válido.")
         fazerDeposito()
     }
-else if (deposito == 0.0 || deposito <0 ){
+else if (deposito == 0 || deposito <0 ){
 
         println("Por favor, informe um número válido.")
         println("")
@@ -89,28 +122,36 @@ else if (deposito == 0.0 || deposito <0 ){
 
         fazerDeposito()
     }
-else {
-    saldo += deposito
-    println("Seu saldo é $saldo")
-   inicio()
+    println("")
+    println("Digite a senha de 4 digitos:")
+    var senha:Int = readln().toInt()
 
-
+    while(senha != 3589){
+        println("Senha incorreta, digite novamente")
+        senha = readln().toInt()
     }
+    if (senha == 3589 ){
+        println("Deposito concluido com sucesso.")
+        saldo += deposito
+        println("")
+        println("$nome seu saldo atual é: R$$saldo reais")
+    }
+    else if (senha == null){
+        println("Por favor, informe uma senha válida.")
+        senha = readln().toInt()
+        fazerSaque()
+    }
+
 }
-
-
-
 
 fun fazerSaque() {
     println("")
     println("$nome seu saldo atual é: R$$saldo reais")
     println("")
     println("Qual o valor para saque? ")
-    var saque = readln().toDoubleOrNull()
+    var saque = readln().toInt()
 
     if (saque == null) {
-        println("")
-        println("$nome seu saldo atual é: R$$saldo reais")
         println("")
         println("Por favor, informe um número válido.")
         fazerSaque()
@@ -126,11 +167,30 @@ else if(saque <= 0){
     println("Operação não autorizada")
         fazerSaque()
 }
-    else if(saque <= saldo){
-        saldo -= saque
-        verSaldo()
+    println("")
+    println("Digite a senha de 4 digitos:")
+    var senha:Int = readln().toInt()
+
+    while(senha != 3589){
+        println("Senha incorreta, digite novamente")
+        senha = readln().toInt()
     }
-}
+    if (senha == 3589 ){
+        println("Saque concluida com sucesso.")
+        saldo -= saque
+        println("")
+        println("$nome seu saldo atual é: R$$saldo reais")
+    }
+    else if (senha == null){
+        println("Por favor, informe uma senha válida.")
+        senha = readln().toInt()
+        fazerSaque()
+    }
+
+    }
+
+
+
 
 
 
@@ -140,6 +200,7 @@ fun fazerTransferencia() {
     println("")
     println("Qual o numero da conta que deseja transferir? ")
     var conta = readln().toInt()
+
 
     println("")
     println("Qual o valor que deseja transferir? ")
@@ -187,7 +248,7 @@ fun erro() {
 
 
 fun sair() {
-    print("Você deseja sair? (S/N) ")
+    println("Você deseja sair? (S/N) ")
     val confirma = readln().toUpperCase()
 
     when (confirma) {
@@ -201,4 +262,6 @@ fun sair2(){
     println("Muito obrigado, $nome!foi um prazer ter você por aqui!")
     exitProcess(0)
 }
+
+
 
