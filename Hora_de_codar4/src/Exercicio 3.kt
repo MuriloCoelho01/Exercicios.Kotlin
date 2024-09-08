@@ -16,7 +16,7 @@ fun main() {
         println("Digite o item:")
         list.add(readln())
         println("Deseja adicionar outros itens a sua lista de compra? ")
-        println("s - sim")
+        println("Caso queira digite (Sim)")
         println("Caso não queira digite (Não)")
         println("Digite: ")
         confirmacao1 = readln()
@@ -49,6 +49,8 @@ fun main() {
                 var remocao3: String = readln()
                 list.remove(remocao3)
 
+
+                println("Item removido com sucesso")
                 println("")
                 println("SUA LISTA ATUAL:")
                 for (m in list) {
@@ -71,6 +73,7 @@ fun main() {
     }
 
 }
+
 
 
 
