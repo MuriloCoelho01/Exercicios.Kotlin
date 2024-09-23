@@ -1,5 +1,5 @@
-# Exercicios Hora de Codar - Kotlin
-Exercicios da atividade HORA_de_CODAR feito em Kotlin, passado pelo professor Gabriel Augusto. Focados no desenvolvimento <br> da lógica de programação e introdução as estruturas iniciais da linguagem Kotlin.
+<h1>Exercicios Hora de Codar - Kotlin</h1>
+Exercicios feito em Kotlin, Focados no desenvolvimento  de lógica de programação <br> e introdução ao conceitos iniciais da linguagem Kotlin.
 
-# Exercicios Caixa Eletronico
-Exercicio focado em resolução de problema, utilizando <b>Funções e Parametros<b>
+<h1>Caixa Eletronico</h1>
+Exercicio focado em desenvolver nossa capacidade de resolução de problemas.<br> Utilizando estruturas de <b>Funções e Parametros<b>
